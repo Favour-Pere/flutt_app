@@ -10,7 +10,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   bool? isChecked = false;
   bool isSwitched = false;
-
+  double sliderValue = 0.0;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,7 +54,7 @@ class _ProfilePageState extends State<ProfilePage> {
             },
           ),
 
-          CheckboxListTile(
+          CheckboxListTile.adaptive(
             tristate: true,
             value: isChecked,
             title: Text('Click me '),
@@ -75,6 +75,27 @@ class _ProfilePageState extends State<ProfilePage> {
                 isSwitched = value;
               });
             },
+          ),
+
+          SwitchListTile.adaptive(
+            value: isSwitched,
+            title: Text('Click me'),
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
+              });
+            },
+          ),
+          Slider.adaptive(
+            value: sliderValue,
+            onChanged: (double value) {
+              setState(() {
+                sliderValue = value;
+              });
+            },
+            min: 0,
+            max: 1,
+            divisions: 10,
           ),
         ],
       ),
