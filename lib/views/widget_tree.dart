@@ -1,6 +1,7 @@
 import 'package:flutt_app/data/notifiers.dart';
 import 'package:flutt_app/views/pages/home_page.dart';
 import 'package:flutt_app/views/pages/profile_page.dart';
+import 'package:flutt_app/views/pages/settings_page.dart';
 import 'package:flutt_app/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,20 @@ class WidgetTree extends StatelessWidget {
             onPressed: () {
               // Handle settings action
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingsPage();
+                  },
+                ),
+              );
+              // Handle settings action
             },
           ),
         ],
