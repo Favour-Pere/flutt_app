@@ -1,5 +1,5 @@
 import 'package:flutt_app/data/notifiers.dart';
-import 'package:flutt_app/views/widget_tree.dart';
+import 'package:flutt_app/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,6 +39,6 @@ class _MyHomePagState extends StatefulWidget {
 class __MyHomePagStateState extends State<_MyHomePagState> {
   @override
   Widget build(BuildContext context) {
-    return WidgetTree();
+    return WelcomePage();
   }
 }
