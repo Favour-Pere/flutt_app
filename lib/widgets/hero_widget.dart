@@ -5,9 +5,16 @@ class HeroWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
-      child: Image.asset('assets/images/fluimage.jpg'),
+    return Hero(
+      tag: 'hero1',
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Image.asset(
+          'assets/images/fluimage.jpg',
+          color: Colors.teal,
+          colorBlendMode: BlendMode.darken,
+        ),
+      ),
     );
   }
 }

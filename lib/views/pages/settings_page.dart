@@ -23,6 +23,47 @@ class _SettingsPageState extends State<SettingsPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      content: Text('This is a SnackBar'),
+                      action: SnackBarAction(
+                        label: 'Save',
+                        onPressed: () {
+                          // Handle save action
+                        },
+                      ),
+                    ),
+                  );
+                  // Handle save action
+                },
+                child: Text('Open SnackBar'),
+              ),
+              Divider(),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        content: Text('This is an AlertDialog'),
+                        title: Text('AlertDialog Title'),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text('Close'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('Open SnackBar'),
+              ),
               DropdownButton(
                 value: menuItem,
                 hint: Text('Select an element'),
@@ -57,13 +98,6 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
               ),
               SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle save action
-                },
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                child: Text('Save'),
-              ),
 
               Checkbox(
                 value: isChecked,
