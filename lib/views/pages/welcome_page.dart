@@ -39,7 +39,7 @@ class WelcomePage extends StatelessWidget {
               },
 
               style: FilledButton.styleFrom(
-                minimumSize: Size(double.infinity, 50.0),
+                minimumSize: Size(double.infinity, 50.0,),
               ),
               child: Text('Get Started'),
             ),
