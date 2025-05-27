@@ -90,13 +90,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 },
               ),
               SizedBox(height: 20),
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter your email',
-                  border: OutlineInputBorder(),
-                ),
-              ),
+           
               SizedBox(height: 20),
 
               Checkbox(
