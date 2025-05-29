@@ -9,29 +9,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          Lottie.asset('assets/lotties/home.json'),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(20.0),
-            child: Card(
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Basic Layout', style: Constants.titleTealText),
-                    Text(
-                      'The description of this',
-                      style: Constants.descriptionText,
-                    ),
-                  ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Lottie.asset('assets/lotties/home.json'),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20.0),
+              child: Card(
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Basic Layout', style: Constants.titleTealText),
+                      Text(
+                        'The description of this',
+                        style: Constants.descriptionText,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -26,54 +26,59 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Column(
-          children: [
-            HeroWidget(title: 'Login'),
-            SizedBox(height: 20),
-            TextField(
-              controller: controllerEmail,
-              decoration: InputDecoration(
-                labelText: 'Email',
-                hintText: 'Enter your email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              children: [
+                HeroWidget(title: 'Login'),
+                SizedBox(height: 20),
+                TextField(
+                  controller: controllerEmail,
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  onEditingComplete: () {
+                    setState(() {});
+                  },
                 ),
-              ),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
-            SizedBox(height: 20),
+                SizedBox(height: 20),
 
-            TextField(
-              controller: controllerPassword,
-              obscureText: true,
-              autocorrect: false,
-              decoration: InputDecoration(
-                labelText: 'Password',
-                hintText: 'Enter your password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                TextField(
+                  controller: controllerPassword,
+                  obscureText: true,
+                  autocorrect: false,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  onEditingComplete: () {
+                    setState(() {});
+                  },
                 ),
-              ),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
-            SizedBox(height: 50),
-            FilledButton(
-              onPressed: () {
-                onLoginPressed();
-              },
+                SizedBox(height: 50),
+                FilledButton(
+                  onPressed: () {
+                    onLoginPressed();
+                  },
 
-              style: FilledButton.styleFrom(
-                minimumSize: Size(double.infinity, 50.0),
-              ),
-              child: Text('Login'),
+                  style: FilledButton.styleFrom(
+                    minimumSize: Size(double.infinity, 50.0),
+                  ),
+                  child: Text('Login'),
+                ),
+                SizedBox(height: 50),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
