@@ -34,7 +34,7 @@ class WelcomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginPage();
+                          return LoginPage(title: "Register");
                         },
                       ),
                     );
@@ -52,7 +52,7 @@ class WelcomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return LoginPage();
+                          return LoginPage(title: "Login");
                         },
                       ),
                     );
@@ -61,7 +61,7 @@ class WelcomePage extends StatelessWidget {
                   style: TextButton.styleFrom(
                     minimumSize: Size(double.infinity, 50.0),
                   ),
-                  child: Text('Register'),
+                  child: Text("Login"),
                 ),
               ],
             ),

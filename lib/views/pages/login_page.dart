@@ -3,8 +3,9 @@ import 'package:flutt_app/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  const LoginPage({super.key, required this.title});
 
+  final String title;
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -32,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.all(10.0),
             child: Column(
               children: [
-                HeroWidget(title: 'Login'),
+                HeroWidget(title: widget.title),
                 SizedBox(height: 20),
                 TextField(
                   controller: controllerEmail,
@@ -47,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                     setState(() {});
                   },
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
 
                 TextField(
                   controller: controllerPassword,
@@ -64,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                     setState(() {});
                   },
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: 20),
                 FilledButton(
                   onPressed: () {
                     onLoginPressed();
@@ -73,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: FilledButton.styleFrom(
                     minimumSize: Size(double.infinity, 50.0),
                   ),
-                  child: Text('Login'),
+                  child: Text(widget.title),
                 ),
                 SizedBox(height: 50),
               ],
